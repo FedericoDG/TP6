@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Objects;
+
 public class Category {
 
     private int code;
@@ -32,6 +34,30 @@ public class Category {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Category other = (Category) obj;
+        if (this.code != other.code) {
+            return false;
+        }
+        return Objects.equals(this.name, other.name);
     }
 
 }

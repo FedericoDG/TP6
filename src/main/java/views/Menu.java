@@ -55,6 +55,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.setText("Consultas");
 
         menuByCategory.setText("Por Rubro");
+        menuByCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuByCategoryActionPerformed(evt);
+            }
+        });
         jMenu2.add(menuByCategory);
 
         menuByDescription.setText("Por Descripción");
@@ -106,6 +111,15 @@ public class Menu extends javax.swing.JFrame {
         desktop.add(view);
     }//GEN-LAST:event_menuByDescriptionActionPerformed
 
+    private void menuByCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuByCategoryActionPerformed
+        desktop.removeAll();
+        desktop.repaint();
+        FilterByCategory view = new FilterByCategory(products);
+        view.moveToFront();
+        view.setVisible(true);
+        desktop.add(view);
+    }//GEN-LAST:event_menuByCategoryActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -155,8 +169,8 @@ public class Menu extends javax.swing.JFrame {
     private void fillProduct() {
         Product product1 = new Product(1, "Polenta", 560, 10, new Category(1, "Comida"));
         Product product2 = new Product(2, "Milangas", 1500, 12, new Category(1, "Comida"));
-        Product product3 = new Product(3, "Ayudin", 2500, 60, new Category(1, "Limpieza"));
-        Product product4 = new Product(4, "Adolfo Dominguez", 1500, 5, new Category(1, "Perfumeria"));
+        Product product3 = new Product(3, "Ayudin", 2500, 60, new Category(2, "Limpieza"));
+        Product product4 = new Product(4, "Adolfo Dominguez", 1500, 5, new Category(3, "Perfumeria"));
 
         products.add(product1);
         products.add(product2);
