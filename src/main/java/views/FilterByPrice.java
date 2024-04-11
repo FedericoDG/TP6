@@ -46,6 +46,8 @@ public class FilterByPrice extends javax.swing.JInternalFrame {
         table = new javax.swing.JTable();
         searchBtn = new javax.swing.JButton();
 
+        setClosable(true);
+
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Listado por Precio");
 

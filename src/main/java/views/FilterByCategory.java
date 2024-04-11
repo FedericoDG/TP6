@@ -34,6 +34,7 @@ public class FilterByCategory extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
 
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(500, 400));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
