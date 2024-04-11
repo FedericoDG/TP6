@@ -71,6 +71,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(menuByDescription);
 
         menuByPrice.setText("Por Precio");
+        menuByPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuByPriceActionPerformed(evt);
+            }
+        });
         jMenu2.add(menuByPrice);
 
         jMenuBar1.add(jMenu2);
@@ -119,6 +124,16 @@ public class Menu extends javax.swing.JFrame {
         view.setVisible(true);
         desktop.add(view);
     }//GEN-LAST:event_menuByCategoryActionPerformed
+
+    private void menuByPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuByPriceActionPerformed
+        // TODO add your handling code here:
+        desktop.removeAll();
+        desktop.repaint();
+        FilterByPrice view = new FilterByPrice(products);
+        view.moveToFront();
+        view.setVisible(true);
+        desktop.add(view);
+    }//GEN-LAST:event_menuByPriceActionPerformed
 
     /**
      * @param args the command line arguments
