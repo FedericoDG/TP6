@@ -5,6 +5,7 @@
 package views;
 
 import entities.Product;
+import entities.TableOptions;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,8 +24,8 @@ public class FilterByPrice extends javax.swing.JInternalFrame {
     public FilterByPrice(TreeSet<Product> products) {
         initComponents();
         this.products = products;
-        createTableHead();
-        clearTable();
+        TableOptions.createTableHead(table, model);
+        TableOptions.clearTable(model);
     }
 
     /**
@@ -127,7 +128,7 @@ public class FilterByPrice extends javax.swing.JInternalFrame {
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-        clearTable();
+        TableOptions.clearTable(model);
 
         if (min.getText() == "" || max.getText() == "") {
             return;
@@ -187,22 +188,22 @@ public class FilterByPrice extends javax.swing.JInternalFrame {
             return false;
         }
     };
-
-    private void createTableHead() {
-        model.addColumn("Code");
-        model.addColumn("Description");
-        model.addColumn("Category");
-        model.addColumn("Price");
-        model.addColumn("Stock");
-
-        table.setModel(model);
-    }
-
-    private void clearTable() {
-        int rows = model.getRowCount() - 1;
-
-        for (int i = rows; i >= 0; i--) {
-            model.removeRow(i);
-        }
-    }
+//
+//    private void createTableHead() {
+//        model.addColumn("Code");
+//        model.addColumn("Description");
+//        model.addColumn("Category");
+//        model.addColumn("Price");
+//        model.addColumn("Stock");
+//
+//        table.setModel(model);
+//    }
+//
+//    private void clearTable() {
+//        int rows = model.getRowCount() - 1;
+//
+//        for (int i = rows; i >= 0; i--) {
+//            model.removeRow(i);
+//        }
+//    }
 }

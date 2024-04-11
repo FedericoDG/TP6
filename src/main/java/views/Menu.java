@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class Menu extends javax.swing.JFrame {
 
-    TreeSet<Product> products = new TreeSet<>();
+    private TreeSet<Product> products = new TreeSet<>();
 
     public Menu() {
         initComponents();

@@ -5,6 +5,7 @@
 package views;
 
 import entities.Product;
+import entities.TableOptions;
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,7 +23,7 @@ public class FilterByDescription extends javax.swing.JInternalFrame {
     public FilterByDescription(TreeSet<Product> products) {
         initComponents();
         this.products = products;
-        createTableHead();
+        TableOptions.createTableHead(table, model);
     }
 
     /**
@@ -103,7 +104,7 @@ public class FilterByDescription extends javax.swing.JInternalFrame {
 
     private void descriptionToFilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descriptionToFilterKeyReleased
         // TODO add your handling code here:
-        clearTable();
+        TableOptions.clearTable(model);
         String query = descriptionToFilter.getText();
         TreeSet<Product> filteredProducts = new TreeSet<>();
 
@@ -128,21 +129,21 @@ public class FilterByDescription extends javax.swing.JInternalFrame {
         }
     };
 
-    private void createTableHead() {
-        model.addColumn("Code");
-        model.addColumn("Description");
-        model.addColumn("Category");
-        model.addColumn("Price");
-        model.addColumn("Stock");
-
-        table.setModel(model);
-    }
-
-    private void clearTable() {
-        int rows = model.getRowCount() - 1;
-
-        for (int i = rows; i >= 0; i--) {
-            model.removeRow(i);
-        }
-    }
+//    private void createTableHead() {
+//        model.addColumn("Code");
+//        model.addColumn("Description");
+//        model.addColumn("Category");
+//        model.addColumn("Price");
+//        model.addColumn("Stock");
+//
+//        table.setModel(model);
+//    }
+//
+//    private void clearTable() {
+//        int rows = model.getRowCount() - 1;
+//
+//        for (int i = rows; i >= 0; i--) {
+//            model.removeRow(i);
+//        }
+//    }
 }
